@@ -1,0 +1,11 @@
+import sqlite3
+conn=sqlite3.connect('shop.db')
+c=conn.cursor()
+c.execute('INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)', ('Laptop', 1200.00, 5)) 
+c.execute('INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)', ('Mouse', 25.50, 20))
+c.execute('INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)', ('Keyboard', 70.00, 10)) 
+c.execute('INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)', ('Monitor', 300.00, 7)) 
+c.execute('INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)', ('Headphones', 80.00, 15)) 
+conn.commit()
+conn.close()
+print('5 products inserted')
